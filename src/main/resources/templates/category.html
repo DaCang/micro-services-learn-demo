@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+   <table bgcolor="#ffe6e6" border="1px" title="类别列表" border-spacing="0">
+       <thead>
+       <tr>
+           <th>类别编码</th>
+           <th>类别名称</th>
+           <th>类别描述</th>
+           <th>创建时间</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+           <td th:text=" ${category.id}"></td>
+           <td th:text=" ${category.name} " ></td>
+           <td th:text="${category.description} " ></td>
+           <td th:text="${#dates.format(category.whenCreated, 'YYYY-MM-dd HH:mm')}"></td>
+
+
+
+       </tr>
+       </tbody>
+   </table>
+</body>
+</html>

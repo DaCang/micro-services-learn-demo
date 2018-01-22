@@ -25,7 +25,9 @@ public class Category extends AbstractEntity {
 
   public static final String TABLE_NAME = "odot_category";
 
+  //类别名称
   private String name;
+  //描述
   private String description;
 
   public String getName() {

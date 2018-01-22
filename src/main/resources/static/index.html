@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<head>
+
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript">
+        function greeting() {
+            var form = document.getElementById("greeting");
+            var name =document.getElementById("name").value;
+            form.action = "/greeting/"+name;
+            //form.action = "${pageContext.request.contextPath}/user/addUser2";
+            //form.action = "${pageContext.request.contextPath}/user/addUser3";
+            form.method = "GET";
+            form.submit();
+        }
+        function category() {
+            var form = document.getElementById("category");
+            var id =document.getElementById("id").value;
+            form.action = "/category/"+id;
+            //form.action = "${pageContext.request.contextPath}/user/addUser2";
+            //form.action = "${pageContext.request.contextPath}/user/addUser3";
+            form.method = "POST";
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+<form id="greeting">
+        姓名<input type="text" name="name" id="name"/>
+        <input type="button" onclick="greeting()" value="进入">
+</form>
+<form id="category">
+    ID<input type="text" name="id" id="id"/>
+    <input type="button" onclick="category()" value="查询类别">
+</form>
+</body>
+</html>

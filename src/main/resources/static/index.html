@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
 
-    <title>Getting Started: Serving Web Content</title> 
+    <title>index</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/micro.js"></script>
     <script type="text/javascript">
         function greeting() {
             var form = document.getElementById("greeting");
@@ -13,15 +14,6 @@
             form.method = "GET";
             form.submit();
         }
-        function category() {
-            var form = document.getElementById("category");
-            var id =document.getElementById("id").value;
-            form.action = "/category/"+id;
-            //form.action = "${pageContext.request.contextPath}/user/addUser2";
-            //form.action = "${pageContext.request.contextPath}/user/addUser3";
-            form.method = "POST";
-            form.submit();
-        }
     </script>
 </head>
 <body>
@@ -29,9 +21,10 @@
         姓名<input type="text" name="name" id="name"/>
         <input type="button" onclick="greeting()" value="进入">
 </form>
-<form id="category">
-    ID<input type="text" name="id" id="id"/>
-    <input type="button" onclick="category()" value="查询类别">
+<form id="category"  onsubmit="queryByKey('category','/category/')" key="id">
+    ID<input type="text" name="id" id="id" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="只能是数字" />
+    <!--<input type="button" onclick="category()" value="查询类别">-->
+    <input type="submit"  value="查询类别">
 </form>
 </body>
 </html>

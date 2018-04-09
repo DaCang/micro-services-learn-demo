@@ -26,9 +26,9 @@ public class IndexController {
     protected Logger logger = Logger.getLogger(IndexController.class);
 
  /**
-   * @Title: 
+   * @Title:
    * @Description: （这里用一句话描述这个方法的作用）
-   * @param null
+   * @param id 编号
    * @return 
    * @author 宋永利
    * @date 2018/4/9

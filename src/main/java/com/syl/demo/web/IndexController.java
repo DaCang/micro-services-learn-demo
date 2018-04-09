@@ -25,7 +25,15 @@ public class IndexController {
 
     protected Logger logger = Logger.getLogger(IndexController.class);
 
-
+ /**
+   * @Title: 
+   * @Description: （这里用一句话描述这个方法的作用）
+   * @param null
+   * @return 
+   * @author 宋永利
+   * @date 2018/4/9
+   * @throws
+  */
     @RequestMapping(value = "/category/{id}",method = {RequestMethod.GET, RequestMethod.POST})
     public String   getCategoryByName(@PathVariable Long id, HttpServletResponse response, HttpServletRequest request, Model model ) throws IOException{
         Category category = new Category();
